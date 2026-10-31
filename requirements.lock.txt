@@ -1,0 +1,4 @@
+numpy==1.26.4
+matplotlib==3.10.9
+# Hardware snapshots additionally require spinqit==0.2.4; install per platform instructions.
+scipy==1.16.3

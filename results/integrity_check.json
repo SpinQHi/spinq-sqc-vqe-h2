@@ -1,0 +1,8 @@
+{
+  "steps": 201,
+  "methods": 8,
+  "long_rows": 1608,
+  "issues": [],
+  "check": "theta, raw, N2 and ideal compared to saved state; five main-point counts, layout, status, shots validated; finite method results and SE",
+  "caveat": "does not establish statistical or physical accuracy of the mitigation"
+}

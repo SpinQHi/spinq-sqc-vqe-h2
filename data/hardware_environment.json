@@ -1,0 +1,8 @@
+{
+  "python": "3.10.21",
+  "spinqit": "0.2.4",
+  "numpy": "1.26.4",
+  "matplotlib": "3.10.9",
+  "python-igraph": "0.9.10",
+  "provenance": "versions inspected in the original conda environment on 2026-10-31; not a historic lockfile"
+}

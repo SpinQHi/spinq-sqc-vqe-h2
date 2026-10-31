@@ -1,0 +1,18 @@
+{
+  "measurement_bases": [
+    "ZZZZ",
+    "XXXX",
+    "XXYY",
+    "YYXX",
+    "YYYY"
+  ],
+  "angles": 5,
+  "pauli_checks": 400,
+  "max_measurement_error": 7.771561172376096e-16,
+  "quotient_shift_validation": "fixed amplitude-damping channel with theta-dependent denominator",
+  "max_gradient_error": 8.640244075763803e-11,
+  "adam_initial_test": "m=.1*g, v=.001*g^2, bias corrected update 0.01 for g=-1",
+  "initial_raw": 0.5000000000133885,
+  "initial_full_n2": 0.500000000013389,
+  "initial_p2": 0.9999999999999991
+}
