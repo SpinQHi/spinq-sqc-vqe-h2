@@ -63,4 +63,3 @@ IBU 和约束优化得到的各基分布非负归一，但逐基处理不保证�
 - `scripts/`：从详细结果派生表格并核验主测量点。
 - `REPRODUCIBILITY.md`、`requirements.lock.txt`、`SHA256SUMS.txt`：复现流程、依赖和文件哈希。
 
-该目录的组织方式参考 [SpinQHi/qpstc-cloud-forecasting](https://github.com/SpinQHi/qpstc-cloud-forecasting) 的 README、代码、协议、结果、复现和哈希分离方式，参考版本 `30d90e7af7b9458132d029228445199d9a264660`。两个项目的科学问题和方法不同，本项目没有复用其实验结果。
