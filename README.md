@@ -1,5 +1,7 @@
 # H₂ 真机 VQE：0–200 步与八种后处理方法
 
+[English README](README_EN.md)
+
 [逐步结果表](results/0-200逐步结果.md) · [八方法 CSV](results/steps_000_200_eight_methods.csv) · [收敛图](results/offline_methods_comparison.png) · [复现说明](REPRODUCIBILITY.md)
 
 本项目整理 R=0.700 Å、STO-3G 四比特 H₂ 超导真机实验的 0–200 步结果。逻辑 q0–q3 顺序对应物理 [Q6,Q7,Q12,Q17]，每个测量基 1024 shots；每一步的目标是完整 N=2 投影能量，优化器为 parameter-shift + Adam。能量单位 Ha，含核间排斥项。原始实验完成 200 次参数更新，本次整理只执行离线后处理。
