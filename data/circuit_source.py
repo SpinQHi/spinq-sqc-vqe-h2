@@ -1,7 +1,7 @@
 """H2 VQE, R=0.700 Angstrom, STO-3G, grouped-spin Jordan-Wigner.
 Run this file to submit hardware circuits. No REM or post-selection.
 """
-from math import pi
+from math import isfinite, pi
 from pathlib import Path
 from datetime import datetime
 import csv
@@ -31,10 +31,17 @@ COEFF = {
 
 
 def build_circuit(theta, basis):
+    if not isfinite(theta):
+        raise ValueError('theta must be finite')
+    # Ry has a 4π matrix period. Wrap theta first, then represent zero by 4π.
+    ry_angle = 4 * (-theta % pi)
+    if ry_angle == 0:
+        ry_angle = 4 * pi
+
     circ = Circuit()
     q = circ.allocateQubits(4)
     # 固定门结构：theta=0 时也保留全部 3 个 CZ。
-    circ << (Ry, q[0], -4 * theta)
+    circ << (Ry, q[0], ry_angle)
     circ << (H, q[1])
     circ << (CZ, (q[0], q[1]))
     circ << (H, q[1])
