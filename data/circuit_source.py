@@ -53,13 +53,15 @@ def build_circuit(theta, basis):
     circ << (X, q[0])
     circ << (X, q[2])
 
-    # q3 末尾 H 与测量变换合并：Z -> H，X -> 无门，Y -> Rx(-pi/2)。
-    q3_gates = {'Z': [(H,)], 'X': [], 'Y': [(Rx, -pi / 2)]}
+    # 用 7π/2 表示等价的 -π/2 旋转，使 Y 基变换的输入角度为正。
+    y_basis_angle = 7 * pi / 2
+    # q3 末尾 H 与测量变换合并：Z -> H，X -> 无门，Y -> Rx(7π/2)。
+    q3_gates = {'Z': [(H,)], 'X': [], 'Y': [(Rx, y_basis_angle)]}
     for gate, *angle in q3_gates[basis[3]]:
         circ << (gate, q[3], *angle)
 
     # q1、q2 的 H 后仍有作用于它们的 CZ，不能直接与测量 H 抵消。
-    rotations = {'Z': [], 'X': [(H,)], 'Y': [(Rz, -pi / 2), (H,)]}
+    rotations = {'Z': [], 'X': [(H,)], 'Y': [(Rz, y_basis_angle), (H,)]}
     for wire in range(3):
         for gate, *angle in rotations[basis[wire]]:
             circ << (gate, q[wire], *angle)

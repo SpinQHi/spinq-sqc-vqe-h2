@@ -16,7 +16,7 @@ The figure shows the logical gates of `build_circuit(theta, 'ZZZZ')`. The only p
 
 The current `build_circuit` wraps the parameterized `Ry` input into $(0,4\pi]$ using its $4\pi$ matrix period, with $4\pi$ representing zero. This applies to every circuit construction, including the center and both shifted points $\theta\pm\pi/8$. The diagram uses the equivalent logical gate $R_y(-4\theta)$. The version used for the archived run is available in the [historical circuit snapshot](https://github.com/SpinQHi/spinq-sqc-vqe-h2/blob/bf9d878a9d18431e064393c1b8fee8afb3ef66e4/data/circuit_source.py).
 
-The ideal prepared state is $\cos(2\theta)|1010\rangle-\sin(2\theta)|0101\rangle$, with bitstrings ordered q0, q1, q2, q3. The five measurement bases are `ZZZZ`, `XXXX`, `XXYY`, `YYXX`, and `YYYY`. Only `ZZZZ` is drawn; the other basis rotations are in the [circuit snapshot](data/circuit_source.py). For example, the final H on q3 cancels with the X-basis change and combines with the Y-basis change into $R_x(-\pi/2)$. The snapshot's legacy layout default was overridden by the experiment driver; the actual layout was [Q6,Q7,Q12,Q17].
+The ideal prepared state is $\cos(2\theta)|1010\rangle-\sin(2\theta)|0101\rangle$, with bitstrings ordered q0, q1, q2, q3. The five measurement bases are `ZZZZ`, `XXXX`, `XXYY`, `YYXX`, and `YYYY`. Only `ZZZZ` is drawn; the other basis rotations are in the [circuit snapshot](data/circuit_source.py). For example, the final H on q3 cancels with the X-basis change and combines with the Y-basis change into $R_x(7\pi/2)$. The snapshot's legacy layout default was overridden by the experiment driver; the actual layout was [Q6,Q7,Q12,Q17].
 
 ## Eight post-processing results
 

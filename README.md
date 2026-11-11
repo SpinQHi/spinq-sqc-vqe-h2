@@ -18,7 +18,7 @@
 
 当前 `build_circuit` 将参数化 `Ry` 的输入按 $4\pi$ 周期转换到 $(0,4\pi]$，其中零角度用 $4\pi$ 表示。每次构建线路都执行该转换，包括迭代中的中心点和 $\theta\pm\pi/8$ 两个移位点。图中仍用等价的 $R_y(-4\theta)$ 表示逻辑门。归档实验使用的版本见 [历史线路快照](https://github.com/SpinQHi/spinq-sqc-vqe-h2/blob/bf9d878a9d18431e064393c1b8fee8afb3ef66e4/data/circuit_source.py)。
 
-理想制备态为 $\cos(2\theta)|1010\rangle-\sin(2\theta)|0101\rangle$，位串从左到右对应 q0、q1、q2、q3。测量使用 `ZZZZ`、`XXXX`、`XXYY`、`YYXX`、`YYYY` 五个基。图只画 `ZZZZ`：其他基的末端测量旋转见 [线路快照](data/circuit_source.py)；例如 q3 原有末端 H 与 X 基变换可抵消，与 Y 基变换合并为 $R_x(-\pi/2)$。源码快照中的旧布局默认值由实验驱动覆盖；本实验实际布局为 [Q6,Q7,Q12,Q17]。
+理想制备态为 $\cos(2\theta)|1010\rangle-\sin(2\theta)|0101\rangle$，位串从左到右对应 q0、q1、q2、q3。测量使用 `ZZZZ`、`XXXX`、`XXYY`、`YYXX`、`YYYY` 五个基。图只画 `ZZZZ`：其他基的末端测量旋转见 [线路快照](data/circuit_source.py)；例如 q3 原有末端 H 与 X 基变换可抵消，与 Y 基变换合并为 $R_x(7\pi/2)$。源码快照中的旧布局默认值由实验驱动覆盖；本实验实际布局为 [Q6,Q7,Q12,Q17]。
 
 ## 八种结果的计算方法
 
